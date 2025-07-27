@@ -1,0 +1,15 @@
+# Ne pas versionner les dépendances locales
+node_modules/
+
+# Ne pas versionner le code compilé
+dist/
+
+# Ne pas versionner les fichiers de config d'éditeur
+.vscode/
+
+# Sécurité (au cas où un fichier de sauvegarde traîne)
+*.log
+*.tsbuildinfo
+
+# Ne pas inclure le dossier Git lui-même (inutile mais parfois rassurant)
+.git/
