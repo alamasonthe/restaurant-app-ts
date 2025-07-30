@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Salade César",
+    "description": "Une salade classique avec du poulet, des croûtons et une sauce César.",
+    "ingredients": [
+      "laitue",
+      "poulet",
+      "croûtons",
+      "parmesan",
+      "sauce César"
+    ],
+    "category": "salad"
+  },
+  {
+    "name": "Soupe à l'oignon",
+    "description": "Soupe traditionnelle française gratinée au fromage.",
+    "ingredients": [
+      "oignons",
+      "bouillon de bœuf",
+      "pain",
+      "gruyère"
+    ],
+    "category": "starter"
+  },
+  {
+    "name": "Bœuf bourguignon",
+    "description": "Plat mijoté de bœuf au vin rouge avec légumes.",
+    "ingredients": [
+      "bœuf",
+      "vin rouge",
+      "carottes",
+      "champignons",
+      "oignons"
+    ],
+    "category": "main"
+  },
+  {
+    "name": "Tarte Tatin",
+    "description": "Tarte aux pommes caramélisées cuite à l'envers.",
+    "ingredients": [
+      "pommes",
+      "sucre",
+      "pâte brisée",
+      "beurre"
+    ],
+    "category": "dessert"
+  },
+  {
+    "name": "couscous",
+    "description": "plat marocain",
+    "ingredients": [
+      "semoule",
+      "merguez"
+    ],
+    "category": "main"
+  },
+  {
+    "name": "paella",
+    "description": "espagnol",
+    "ingredients": [
+      "riz",
+      "crevette"
+    ],
+    "category": "main"
+  },
+  {
+    "name": "choucroute",
+    "description": "alsace",
+    "ingredients": [
+      "choux",
+      "saucisse"
+    ],
+    "category": "main"
+  },
+  {
+    "name": "gloubiboulga",
+    "description": "casimir",
+    "ingredients": [
+      "banane",
+      "miel"
+    ],
+    "category": "main"
+  },
+  {
+    "name": "oeuf mayonnaise",
+    "description": "oeuf mayonnaise",
+    "ingredients": [
+      "oeuf",
+      "mayonnaise"
+    ],
+    "category": "starter"
+  }
+]

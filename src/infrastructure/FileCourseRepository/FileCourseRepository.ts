@@ -7,34 +7,31 @@ import path from 'path';
 
 export class FileCourseRepository implements CourseRepositoryModel {
   private filePath: string;
-  private courses: CourseModel[] = [];
 
   constructor(options: FileCourseRepositoryOptions) {
     this.filePath = path.resolve(options.filePath);
   }
 
-  async load(): Promise<void> {
-    try {
-      this.courses = await readJson<CourseModel[]>(this.filePath);
-    } catch (err) {
-      this.courses = [];
-    }
-  }
-
-  async save(): Promise<void> {
-    await writeJson(this.filePath, this.courses);
-  }
-
   async create(course: CourseModel): Promise<void> {
-    this.courses.push(course);
-    await this.save();
+    const courses = await this.readAllFromFile();
+    courses.push(course);
+    await writeJson(this.filePath, courses);
   }
 
   async getAll(): Promise<CourseModel[]> {
-    return [...this.courses];
+    return this.readAllFromFile();
   }
 
   async getByName(name: string): Promise<CourseModel | null> {
-    return this.courses.find(c => c.name === name) || null;
+    const courses = await this.readAllFromFile();
+    return courses.find(c => c.name === name) || null;
+  }
+
+  private async readAllFromFile(): Promise<CourseModel[]> {
+    try {
+      return await readJson<CourseModel[]>(this.filePath);
+    } catch (err) {
+      return [];
+    }
   }
 }

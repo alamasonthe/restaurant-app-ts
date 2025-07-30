@@ -16,7 +16,7 @@ import { HttpServer } from './controllers/web/HttpServer';
 import { WebPageRenderer } from './controllers/web/WebPageRenderer';
 
 const webPageRenderer = new WebPageRenderer();
-const pageRoutes = new PageRoutes(webPageRenderer);
+const pageRoutes = new PageRoutes(courseService);
 const server = new HttpServer(pageRoutes);
 
 /*
