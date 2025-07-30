@@ -3,7 +3,6 @@ import path from 'path';
 import { CourseRepositoryModel } from '../../domain/ports/CourseRepositoryModel';
 import { CourseModel } from '../../domain/ports/CourseModel';
 import { CourseCategory } from '../../domain/enums/CourseCategory';
-import { SqliteCourseRepositoryOptions } from './SqliteCourseRepositoryOptions';
 
 type CourseRow = {
   id: number;
@@ -20,11 +19,10 @@ type IdRow = { id: number };
 export class SqliteCourseRepository implements CourseRepositoryModel {
   private db: Database.Database;
 
-  constructor(options: SqliteCourseRepositoryOptions) {
-    const resolvedPath = path.resolve(options.filePath);
-    this.db = new Database(resolvedPath);
-    console.log('Ouverture DB OK');
-  }
+  constructor(filePath: string) {
+  const resolvedPath = path.resolve(filePath);
+  this.db = new Database(resolvedPath);
+}
 
   async getAll(): Promise<CourseModel[]> {
     const rows = this.db.prepare(`

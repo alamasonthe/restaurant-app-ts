@@ -5,22 +5,21 @@ import { CourseService } from './domain/services/CourseService';
 // web
 import { PageRoutes } from './controllers/web/PageRoutes';
 import { HttpServer } from './controllers/web/HttpServer';
-import { WebPageRenderer } from './controllers/web/WebPageRenderer';
 
 async function main() {
   // Course repository
-  const repoType: string = 'sqlite';
+  const repoType: string = 'file';
 
   let repository;
   switch (repoType) {
-    case 'json': {
+    case 'file': {
       const { FileCourseRepository } = await import('./infrastructure/FileCourseRepository');
-      repository = new FileCourseRepository({ filePath: './dist/data/courses.json' });
+      repository = new FileCourseRepository('./dist/data/courses.json');
       break;
     }
     case 'sqlite': {
       const { SqliteCourseRepository } = await import('./infrastructure/SqliteCourseRepository');
-      repository = new SqliteCourseRepository({ filePath: './dist/data/restaurant.db' });
+      repository = new SqliteCourseRepository('./dist/data/restaurant.db');
       break;
     }
     default:
@@ -30,7 +29,6 @@ async function main() {
   const courseFactory = new CourseFactory();
   const courseService = new CourseService(repository);
 
-  const webPageRenderer = new WebPageRenderer();
   const pageRoutes = new PageRoutes(courseService);
   const server = new HttpServer(pageRoutes);
 

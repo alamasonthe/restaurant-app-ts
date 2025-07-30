@@ -1,6 +1,5 @@
 import { CourseModel } from '../../domain/ports/CourseModel';
 import { CourseRepositoryModel } from '../../domain/ports/CourseRepositoryModel';
-import { FileCourseRepositoryOptions } from './FileCourseRepositoryOptions';
 import { readJson } from '../../utils/readJson';
 import { writeJson } from '../../utils/writeJson';
 import path from 'path';
@@ -8,8 +7,8 @@ import path from 'path';
 export class FileCourseRepository implements CourseRepositoryModel {
   private filePath: string;
 
-  constructor(options: FileCourseRepositoryOptions) {
-    this.filePath = path.resolve(options.filePath);
+  constructor(filePath: string) {
+    this.filePath = path.resolve(filePath);
   }
 
   async create(course: CourseModel): Promise<void> {
