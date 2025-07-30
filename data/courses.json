@@ -71,23 +71,5 @@
       "saucisse"
     ],
     "category": "main"
-  },
-  {
-    "name": "gloubiboulga",
-    "description": "casimir",
-    "ingredients": [
-      "banane",
-      "miel"
-    ],
-    "category": "main"
-  },
-  {
-    "name": "oeuf mayonnaise",
-    "description": "oeuf mayonnaise",
-    "ingredients": [
-      "oeuf",
-      "mayonnaise"
-    ],
-    "category": "starter"
   }
 ]

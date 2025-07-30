@@ -17,6 +17,8 @@ export class PageRoutes {
   constructor(private readonly courseService: CourseServiceModel) {}
 
   async handleRequest(req: IncomingMessage, res: ServerResponse): Promise<void> {
+    console.log(`[REQUEST] ${req.method} ${req.url}`);
+    
     const method = req.method ?? 'GET';
     const url = req.url ?? '/';
 

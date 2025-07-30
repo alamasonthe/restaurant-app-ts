@@ -15,8 +15,8 @@ export class HttpServer {
       }
     });
 
-    server.listen(port, () => {
-      console.log(`Serveur en écoute sur http://localhost:${port}`);
+    server.listen(port, '0.0.0.0', () => {
+      console.log(`Serveur en écoute sur http://0.0.0.0:${port}`);
     });
   }
 }
