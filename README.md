@@ -1,1 +1,4 @@
-Boilerplate archi hexagonale javascript appli restaurant
+## Documentation
+Boilerplate archi hexagonale typescript appli restaurant
+
+- [Architecture](./ARCHITECTURE.md)
